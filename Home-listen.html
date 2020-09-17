@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
+    </head>
+    <body>
+    <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">    
+        <!--head开始-->
+            <div class="uh bc-head  ubb bc-border" data-control="HEADER">
+                <div class="ub">
+                    <h1 class="ut ut-s tx-c" tabindex="0" style="color: #FFFFFF">已添加的听力课程</h1>
+                </div>
+            </div>
+        <!--head结束-->
+        <div style="height: 90px;background-color: #EEEEEE"></div>
+        <!--列表开始-->
+            <div class="panel panel-default" style="margin: 25px">
+                <a href="CourseListen-detail-1.html" class="media-left"><img src="img/English-1.jpg"/></a>
+                <div class="media-body" style="padding: 20px">
+                   University Of Cambridge 1<br /> 收藏：15 | 出错率：23% <br />  价格：0积分
+                </div>
+            </div>
+        <!--列表结束-->
+        <!--footer开始-->
+        <div class="uf sc-bg ubt sc-border-tab ub-f1 ub" data-control="FOOTER" id="Footer">
+            <div class="ub-f1 ub" id="tabview2" style="margin: 20px"></div>
+        </div>
+        <!--footer结束-->
+    </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+        <script src="js/appcan.listview.js"></script>
+        <script src="js/appcan.optionList.js"></script>
+        <script src="js/appcan.slider.js"></script>
+        <script src="js/appcan.tab.js"></script>
+        <script src="js/appcan.treeview.js"></script>
+        <script src="js/appcan.treeview.js"></script>
+        <script src="jquery/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script>
+        var tabview2 = appcan.tab({
+            selector: "#tabview2",
+            hasIcon: true,
+            hasAnim: false,
+            hasLabel: true,
+            hasBadge: false,
+            index:1,
+            data : [{
+                label : "课程",
+                icon : "fa-home"
+            }, {
+                label : "听力",
+                icon : "fa-headphones"
+            }, {
+                label : "口语",
+                icon : "fa-microphone"
+            }, {
+                label : "我的",
+                icon : "fa-user"
+            }]
+        })
+        tabview2.on("click",function(obj,index){
+            if(index==0){
+                appcan.window.close(-1);
+                appcan.window.open({
+                    name:"Course",
+                    data:"Home-course.html",
+                    aniId:6
+                })
+            }else if(index==1){
+                appcan.window.close(-1);
+                appcan.window.open({
+                    name:"Listen",
+                    data:"Home-listen.html",
+                    aniId:6
+                })
+            }else if(index==2){
+                appcan.window.close(-1);
+                appcan.window.open({
+                    name:"Speak",
+                    data:"Home-speak.html",
+                    aniId:6
+                })
+            }else if(index==3){
+                appcan.window.close(-1);
+                appcan.window.open({
+                    name:"My",
+                    data:"Home-my.html",
+                    aniId:6
+                })
+            }
+        })
+        </script> 
+    </body>
+</html>

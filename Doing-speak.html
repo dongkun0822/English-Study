@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    </head>
+    <body class="" ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <!--head开始-->
+            <div class="uh bc-head  ubb bc-border" data-control="HEADER">
+                <div class="ub">
+                    <a href="CourseSpeak-detail-2.html">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="ub-img1 icon-back ulev2">
+                        </div>
+                    </div>
+                    </a>
+                    <h1 class="ut ulev-3 ut-s tx-c" tabindex="0" style="color: #FFFFFF">做口语题目</h1>
+                    <div class="nav-btn" id="nav-right">
+                    </div>
+                </div>
+            </div>
+            <!--head结束-->
+            <div style="height: 80px;background-color: #EEEEEE"></div>
+            <!--面板开始-->
+            <div class="panel panel-default" style="margin: 5%">
+                <div class="panel-body">
+                    <img src="img/video.png"/>
+                    <audio controls="controls" style="width: 80%">
+                        <source src="music/song1.wav" type="audio/wav"/>
+                    </audio>
+                </div>
+                <!--Q1开始-->
+             <div style="margin: 5%">
+                  口语材料:<br /><br />
+                Northbound I-15 looks good until you reach around 3300 south. 
+                A minor fender-bender, perhaps resulting from the poor visibility out there, has traffic backed up a mile or so. 
+             </div>
+             <div align="center"><img src="img/microphone.png"/></div>
+             <div align="center">
+                 <a style="text-decoration: none">
+                    <button style="background-color:#22CC85;color:white;border-radius:60px;margin-top: 5%;margin-bottom: 5%"  onclick="funStart()" id="btnStart">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按下录音&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    </button>
+                 </a>
+                 <button onclick="funStop()" id="btnStop" disabled>停止</button>
+                 <button onclick="answer()">分数</button>
+                 <div id="recordingslist"></div>
+             </div>
+                <!--Q1结束-->
+            </div>
+            <!--面板结束-->
+            
+            <!--按钮开始-->
+            <div class="ub ub-ver ub-pe ub-f1 uinn-pLb1" style="margin: 5%">
+                <div class="uinn" onclick="star()">
+                    <div class="button ub ub-ac bc-text-head ub-pc uc-a1" style="background-color: orange">添加至收藏夹</div>
+                </div>
+                <div class="uinn" onclick="wrong()">
+                    <div class="button ub ub-ac bc-text-head ub-pc uc-a1" style="background-color: brown">添加至错题本</div>
+                </div>
+            </div>
+            <!--按钮结束-->
+            
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+		<script src="js/appcan.listview.js"></script>
+		<script src="js/appcan.optionList.js"></script>
+		<script src="js/appcan.slider.js"></script>
+		<script src="js/appcan.tab.js"></script>
+		<script src="js/appcan.treeview.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="jquery/jquery.js"></script>
+        <script src="jquery/jquery.min.js"></script>
+        <script src="js/recordmp3.js"></script>
+        <script>
+            function star() {
+                appcan.window.alert({
+                    content : '成功添加至收藏夹'
+                });
+            }
+            function wrong() {
+                appcan.window.alert({
+                    content : '成功添加至错题本'
+                });
+            }
+            function answer() {
+                appcan.window.alert({
+                    content : '您的得分是0分<br/>请继续加油！'
+                });
+            }
+            var recorder = new MP3Recorder({
+                debug:true,
+                funOk: function () {
+                    btnStart.disabled = false;
+                    alert("初始化成功")
+                },
+                funCancel: function (msg) {
+                    //alert(msg);
+                    recorder = null;
+                }
+            });
+            var mp3Blob;
+            function funStart() {
+                btnStart.disabled = true;
+                btnStop.disabled = false;
+                alert('录音开始...');
+                recorder.start();
+            }
+            function funStop() {
+                alert('录音结束');
+                btnStart.disabled = false;
+                btnStop.disabled = true;
+                recorder.stop();
+                alert('录音结束，MP3导出中...');
+                recorder.getMp3Blob(function (blob) {
+                    alert('MP3导出成功');
+
+                    mp3Blob = blob;
+                    var url = URL.createObjectURL(mp3Blob);
+                    var div = document.createElement('div');
+                    var au = document.createElement('audio');
+                    var hf = document.createElement('a');
+
+                    au.controls = true;
+                    au.src = url;
+                    hf.href = url;
+                    hf.download = new Date().toISOString() + '.mp3';
+                    hf.innerHTML = hf.download;
+                    div.appendChild(au);
+                    div.appendChild(hf);
+                    recordingslist.appendChild(div);
+                });
+            }
+        </script>
+    </body>
+</html>

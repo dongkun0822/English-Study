@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    </head>
+    <body class="" ontouchstart>
+        <div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+            <!--head开始-->
+            <div class="uh bc-head  ubb bc-border" data-control="HEADER">
+                <div class="ub">
+                    <a href="CourseListen-detail-2.html">
+                    <div class="nav-btn" id="nav-left">
+                        <div class="ub-img1 icon-back ulev2">
+                        </div>
+                    </div>
+                    </a>
+                    <h1 class="ut ulev-3 ut-s tx-c" tabindex="0" style="color: #FFFFFF">做听力题目</h1>
+                    <div class="nav-btn" id="nav-right">
+                    </div>
+                </div>
+            </div>
+            <!--head结束-->
+            <div style="height: 80px;background-color: #EEEEEE"></div>
+            <!--面板开始-->
+            <div class="panel panel-default" style="margin: 5%">
+                <div class="panel-body">
+                    <img src="img/video.png"/>
+                    <audio controls="controls" style="width: 80%">
+                        <source src="music/song1.wav" type="audio/wav"/>
+                    </audio>
+                </div>
+                <!--Q1开始-->
+             <div style="margin: 5%">
+                Question 1 :
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;A. A glass of water is fine.</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;B. I'll have a piece of apple pie.</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;C. French dressing, please.</label>
+                </div>
+             </div>
+                <!--Q1结束-->
+                
+                <!--Q2开始-->
+             <div style="margin: 5%">
+                Question 2 :
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;A. A glass of water is fine.</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;B. I'll have a piece of apple pie.</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios1" id="optionsRadios3" value="option3" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;C. French dressing, please.</label>
+                </div>
+             </div>
+                <!--Q2结束-->
+                
+                <!--Q3开始-->
+             <div style="margin: 5%">
+                Question 3 :
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios2" id="optionsRadios1" value="option1" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;A. A glass of water is fine.</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;B. I'll have a piece of apple pie.</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" style="height:30px;width:30px">&nbsp;&nbsp;&nbsp;C. French dressing, please.</label>
+                </div>
+             </div>
+                <!--Q3结束-->
+            </div>
+            <!--面板结束-->
+            <div align="center">
+            <a style="text-decoration: none" onclick="answer()">
+                    <button style="background-color:#22CC85;color:white;border-radius:60px;margin-top: 6%">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提交答案&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    </button>
+            </a>
+            </div>
+            <!--按钮开始-->
+            <div class="ub ub-ver ub-pe ub-f1 uinn-pLb1" style="margin: 5%">
+                <div class="uinn" onclick="star()">
+                    <div class="button ub ub-ac bc-text-head ub-pc uc-a1" style="background-color: orange">添加至收藏夹</div>
+                </div>
+                <div class="uinn" onclick="wrong()">
+                    <div class="button ub ub-ac bc-text-head ub-pc uc-a1" style="background-color: brown">添加至错题本</div>
+                </div>
+            </div>
+            <!--按钮结束-->
+            <!--答案开始-->
+            <div class="panel panel-default" style="margin: 5%">
+                <div style="margin: 5%">听力原文 :<br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;This is SkyCam from Channel 11 News, reporting to you live over the valley. 
+                For those of you heading south on I-15 on your commute home from work, expect some delays around the 215 Interchange.
+                Road crews are making repairs on the left lane, so commuters should be prepared to shift over to the right around 7200 South. 
+                This bottleneck appears to clear up at around 9600 south. You should expect such delays at least until the end of the week.
+                <br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Northbound I-15 looks good until you reach around 3300 south. 
+                A minor fender-bender, perhaps resulting from the poor visibility out there, has traffic backed up a mile or so. 
+                Also, some reports have come in on patches of black ice on roads in that area. 
+                Forecasters predict sporadic freezing rain later into the night and early morning hours. 
+                And one more note, the frigid temperatures and heavy snow in the mountains have forced a herd of elk down into Riverside Park, 
+                so extreme caution should be taken if you are travelling around that area.
+                And that's all from SkyCam 11, providing you with traffic updates on the hour.
+                <br /><br />听力题目:<br /><br />
+                1. What is causing the delays near Interstate 215?<br />
+                2. What situation has resulted because of the extremely cold temperatures snow in the mountains?<br />
+                3. What weather conditions are predicted during the night and morning hours?
+             </div>
+            </div>
+            <!--答案结束-->
+            
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.scrollbox.js"></script>
+        <script src="js/template.import.js"></script>
+		<script src="js/appcan.listview.js"></script>
+		<script src="js/appcan.optionList.js"></script>
+		<script src="js/appcan.slider.js"></script>
+		<script src="js/appcan.tab.js"></script>
+		<script src="js/appcan.treeview.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="jquery/jquery.js"></script>
+        <script src="jquery/jquery.min.js"></script>
+        <script type="text/javascript">
+            function answer() {
+                appcan.window.alert({
+                    content : '您的答案： A B C<br/>正确答案： C B A'
+                });
+            }
+            function star() {
+                appcan.window.alert({
+                    content : '成功添加至收藏夹'
+                });
+            }
+            function wrong() {
+                appcan.window.alert({
+                    content : '成功添加至错题本'
+                });
+            }
+        </script>
+    </body>
+</html>
