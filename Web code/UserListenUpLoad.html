@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <script src="bootstrap/jquery/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body style="background-color: #EEEEEE">
+        <!--导航栏-->
+    	<nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid" style="background-color: #22CC85">
+                <div class="navbar-header navbar-brand" style="color: #FFFFFF">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 欢迎来到后台管理中心 &nbsp&nbsp&nbsp&nbsp
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="UserListen.html" style="color: #FFFFFF;background-color: #36D994">听力</a></li>
+                    <li><a href="UserSpeak.html" style="color: #FFFFFF">口语</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--大框-->
+        <div style="margin-top: 3%;margin-left: 10%;margin-right: 10%;margin-bottom: 3%;padding: 3%;background-color: #FFFFFF;border: 1px solid #22CC85">
+            <div style="font-size: 30px;margin-left: 3%">目录</div>
+            <div class="row">
+                 <!--左边-->
+                 <div class="col-md-3">
+                    <input class="form-control" placeholder="课程名称" style="border-color: #22CC85;margin-top: 8%">
+                    <div style="color: #22CC85;margin-top: 20%;font-size: 20px;text-align: center">1. Session 1</div>
+                    <div style="text-align: center;color: #22CC85;margin: 10%">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </div>
+                 </div>
+                 <!--右边-->
+                 <div class="col-md-9" style="border-left: 1px solid gray">
+                    <div class="form-group" style="margin-left: 10%">
+                        <div class="col-sm-2" style="font-size: 18px;text-align: center">上传音频</div>
+                        <div class="col-sm-3">
+                            <input class="form-control">
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-default">浏览文件</button>
+                        </div>
+                    </div>
+                    <div style="margin: 7%;width: 80%">
+                        <h5>Question1:</h5>
+                        <input class="form-control" placeholder="选项A" style="border-color: #22CC85;margin: 1%">
+                        <input class="form-control" placeholder="选项B" style="border-color: #22CC85;margin: 1%">
+                        <input class="form-control" placeholder="选项C" style="border-color: #22CC85;margin: 1%">
+                        <select class="form-control" style="border-color: #22CC85;margin: 1%;font-size: 15px">
+                            <option style="font-size: 15px">答案</option>
+                            <option style="font-size: 15px">A</option>
+                            <option style="font-size: 15px">B</option>
+                            <option style="font-size: 15px">C</option>
+                        </select>
+                        <h5>Question2:</h5>
+                        <input class="form-control" placeholder="选项A" style="border-color: #22CC85;margin: 1%">
+                        <input class="form-control" placeholder="选项B" style="border-color: #22CC85;margin: 1%">
+                        <input class="form-control" placeholder="选项C" style="border-color: #22CC85;margin: 1%">
+                        <select class="form-control" style="border-color: #22CC85;margin: 1%;font-size: 15px">
+                            <option style="font-size: 15px">答案</option>
+                            <option style="font-size: 15px">A</option>
+                            <option style="font-size: 15px">B</option>
+                            <option style="font-size: 15px">C</option>
+                        </select>
+                        <h5>Question3:</h5>
+                        <input class="form-control" placeholder="选项A" style="border-color: #22CC85;margin: 1%">
+                        <input class="form-control" placeholder="选项B" style="border-color: #22CC85;margin: 1%">
+                        <input class="form-control" placeholder="选项C" style="border-color: #22CC85;margin: 1%">
+                        <select class="form-control" style="border-color: #22CC85;margin: 1%;font-size: 15px">
+                            <option style="font-size: 15px">答案</option>
+                            <option style="font-size: 15px">A</option>
+                            <option style="font-size: 15px">B</option>
+                            <option style="font-size: 15px">C</option>
+                        </select>
+                    </div>
+                    <textarea class="form-control" placeholder="原文及答案" style="border-color: #22CC85;margin-left: 8%;width: 80%;height: 200px"></textarea>
+                 </div>
+            </div>
+            <!--下边-->
+            <div style="text-align: center;margin-top: 3%">
+                <button class="btn btn-default" style="width: 20%;border-color: #22CC85">上传</button>
+            </div>
+        </div>
+    </body>
+</html>
